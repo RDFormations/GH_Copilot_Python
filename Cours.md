@@ -1,21 +1,71 @@
-# Développer en Python avec GitHub Copilot
+# Introduction — Développer en Python avec GitHub Copilot
 
-Formation GitHub Copilot pour le développement Python : des **completions inline** au **mode Agent**, via la personnalisation (**Instructions**, **Skills**).
+Bienvenue dans la formation **GitHub Copilot** pour développeurs **Python**.
 
-| Module | Thème |
-| ------ | ----- |
-| 1 | Introduction |
-| 2 | Completions inline |
-| 3 | Chat et modes |
-| 4 | Agent, Skills, Instructions + schéma |
-| 5 | Path-specific, skills avancés, commit, review |
-| 6 | Bonnes pratiques |
+Cette formation couvre l utilisation de GitHub Copilot au quotidien : completions inline, Chat, personnalisation du dépôt et bonnes pratiques de validation du code généré.
+
+## Public et prérequis
+
+| Prérequis | Détail |
+| --------- | ------ |
+| Développement | Savoir lire et écrire du code **Python** |
+| Git / GitHub | Compte GitHub, notions de dépôt et commit |
+| Éditeur | Visual Studio Code (recommandé) |
+| Copilot | Abonnement actif (Individual, Business ou Enterprise) |
+
+## Objectifs globaux
+
+- Utiliser les completions inline avec des prompts précis.
+- Maîtriser Copilot Chat (Ask, Edit, Plan, Agent).
+- Personnaliser le dépôt avec Instructions et Skills.
+- Configurer path-specific, commits et revues assistées.
+- Appliquer une checklist de validation sur le code généré.
+
+## Organisation — 6 modules
+
+| Module | Thème | Durée |
+| ------ | ----- | ----- |
+| 1 | Introduction à GitHub Copilot | 2 h |
+| 2 | Completions inline et contexte | 3 h |
+| 3 | Chat et modes d'interaction | 3 h |
+| 4 | Agent, Skills et Instructions | 4 h |
+| 5 | Path-specific, commit et review | 3 h |
+| 6 | Bonnes pratiques et productivité | 2 h |
+
+Chaque module comprend un **cours**, des **exercices** et une **correction**.
+
+```mermaid
+flowchart LR
+ A[Install] --> B[Inline]
+ B --> C[Chat]
+ C --> D[Instructions]
+ D --> E[Agent]
+ E --> F[Review]
+```
+
+**Prochaine étape :** [Module 1 — Introduction](/formations/fr-github-copilot-python/module-01-introduction)
 
 ---
 
-## Module 1 : Introduction à GitHub Copilot
+# Module 1 — Introduction à GitHub Copilot
 
-### Qu'est-ce que GitHub Copilot ?
+Ce module couvre GitHub Copilot pour le développement en **Python**. Il pose les bases : comprendre Copilot, choisir le bon mode, et vérifier l'installation dans VS Code.
+
+**Durée indicative :** 2 h.
+
+## Objectifs
+
+- Définir GitHub Copilot et son rôle de pair-programmer virtuel.
+- Distinguer inline, Chat, Agent et CLI.
+- Installer et configurer Copilot dans VS Code.
+- Consulter les statistiques d'utilisation.
+
+---
+
+> [!note] Définition — GitHub Copilot
+> Assistant IA intégré à l'éditeur. Analyse le **contexte** (fichiers, commentaires, sélection) et propose des **suggestions** en temps réel.
+
+## 1.1 Qu'est-ce que GitHub Copilot ?
 
 GitHub Copilot est un assistant de programmation basé sur l'intelligence artificielle, développé par GitHub en collaboration avec OpenAI. Il fonctionne comme un **pair-programmer virtuel** intégré directement dans l'éditeur de code.
 
@@ -32,16 +82,16 @@ GitHub Copilot est un assistant de programmation basé sur l'intelligence artifi
 - Il ne garantit pas que le code généré est correct ou sécurisé
 - Il ne remplace pas la compréhension du langage Python et des bonnes pratiques PEP
 
-### Les différentes versions — du complétion à l'agent
+## 1.2 Les différentes versions — du complétion à l'agent
 
 GitHub Copilot propose plusieurs **niveaux d'autonomie**. La formation s'articule autour du mode **Agent** et de sa personnalisation (**Instructions**, **Skills**), tout en conservant les **completions inline** pour l'écriture au fil de l'eau.
 
-| Version              | Niveau d'autonomie | Description                                    | Usage principal                         |
+| Version | Niveau d'autonomie | Description | Usage principal |
 | -------------------- | ------------------ | ---------------------------------------------- | --------------------------------------- |
-| **Copilot (inline)** | Faible             | Suggestions de code directement dans l'éditeur | Complétion au quotidien, boilerplate    |
-| **Copilot Chat**     | Moyen              | Conversation (Ask, Edit, Plan)                 | Questions, explications, refactoring    |
-| **Mode Agent**       | Élevé              | Planifie, modifie plusieurs fichiers, exécute  | Tâches multi-fichiers, debug, migration |
-| **Copilot CLI**      | Élevé              | Agent en ligne de commande                     | Shell, tests, CI, scripts               |
+| **Copilot (inline)** | Faible | Suggestions de code directement dans l'éditeur | Complétion au quotidien, boilerplate |
+| **Copilot Chat** | Moyen | Conversation (Ask, Edit, Plan) | Questions, explications, refactoring |
+| **Mode Agent** | Élevé | Planifie, modifie plusieurs fichiers, exécute | Tâches multi-fichiers, debug, migration |
+| **Copilot CLI** | Élevé | Agent en ligne de commande | Shell, tests, CI, scripts |
 
 **Copilot inline** reste le point d'entrée : dès qu'on tape du code, des suggestions apparaissent en gris (`Tab` pour accepter). Voir le **Module 2**.
 
@@ -51,9 +101,9 @@ GitHub Copilot propose plusieurs **niveaux d'autonomie**. La formation s'articul
 
 **Copilot CLI** (`gh copilot`) reprend la logique agentique hors de l'éditeur — utile pour lancer les tests (`pytest`), typer (`mypy`) ou formater (`ruff format`).
 
-> **Fil conducteur :** maîtriser les completions inline, puis le Chat, puis personnaliser le projet avec Instructions et Skills pour le mode Agent.
+> ** :** maîtriser les completions inline, puis le Chat, puis personnaliser le projet avec Instructions et Skills pour le mode Agent.
 
-### Installation et configuration
+## 1.3 Installation et configuration
 
 **Prérequis :**
 
@@ -75,12 +125,12 @@ Créer un fichier `test.py` et commencer à taper :
 
 ```python
 def greet(name: str) -> str:
-    """Affiche un message de bienvenue."""
+ """Affiche un message de bienvenue."""
 ```
 
 Si Copilot fonctionne, une suggestion devrait apparaître en gris pour compléter la fonction.
 
-### Interface et statistiques d'utilisation
+## 1.4 Interface et statistiques d'utilisation
 
 Pour consulter les statistiques d'utilisation de Copilot :
 
@@ -92,27 +142,45 @@ En entreprise (Copilot Business/Enterprise), les administrateurs ont accès à u
 
 ---
 
-## Module 2 : Completions inline et contexte
+---
+
+# Module 2 — Completions inline et contexte
+
+Après le [module 1](/formations/fr-github-copilot-python/module-01-introduction), nous avons installé Copilot. Les **completions inline** accélèrent l écriture du boilerplate Python (DTO, validators, tests). Ce module approfondit raccourcis, contexte et commentaires-prompt.
+
+**Durée indicative :** 3 h.
+
+## Objectifs
+
+- Maîtriser les raccourcis clavier des suggestions inline.
+- Expliquer la fenêtre de contexte et ses limites.
+- Rédiger des commentaires-prompts (Quoi / Comment / Contraintes).
+- Itérer : alternatives, acceptation partielle, reformulation.
+
+---
 
 Les **completions inline** sont le mode le plus utilisé au quotidien. Une fois les **Instructions** configurées (Module 4), elles produisent des suggestions alignées sur les standards du projet Python.
 
-### Raccourcis clavier essentiels
+> [!note] Définition — Complétion inline
+> Suggestion affichée **en gris** pendant la frappe. Acceptez (`Tab`), rejetez (`Échap`) ou parcourez les alternatives.
 
-| Action                           | Raccourci (Windows/Linux) | Raccourci (Mac) |
+## 2.1 Raccourcis clavier essentiels
+
+| Action | Raccourci (Windows/Linux) | Raccourci (Mac) |
 | -------------------------------- | ------------------------- | --------------- |
-| Accepter la suggestion           | `Tab`                     | `Tab`           |
-| Rejeter la suggestion            | `Échap`                   | `Échap`         |
-| Suggestion suivante              | `Alt + ]`                 | `Option + ]`    |
-| Suggestion précédente            | `Alt + [`                 | `Option + [`    |
-| Accepter le mot suivant          | `Ctrl + →`                | `Cmd + →`       |
-| Déclencher manuellement          | `Alt + \`                 | `Option + \`    |
-| Ouvrir le panneau de suggestions | `Ctrl + Enter`            | `Ctrl + Enter`  |
+| Accepter la suggestion | `Tab` | `Tab` |
+| Rejeter la suggestion | `Échap` | `Échap` |
+| Suggestion suivante | `Alt + ]` | `Option + ]` |
+| Suggestion précédente | `Alt + [` | `Option + [` |
+| Accepter le mot suivant | `Ctrl + →` | `Cmd + →` |
+| Déclencher manuellement | `Alt + \` | `Option + \` |
+| Ouvrir le panneau de suggestions | `Ctrl + Enter` | `Ctrl + Enter` |
 
 Le panneau de suggestions (`Ctrl + Enter`) ouvre une fenêtre avec jusqu'à 10 suggestions alternatives. Utile quand la première suggestion ne convient pas.
 
-### Déclencher des suggestions
+## 2.2 Déclencher des suggestions
 
-#### Commencer à taper une signature de fonction
+### Commencer à taper une signature de fonction
 
 ```python
 def calculate_factorial(n: int) -> int:
@@ -120,28 +188,28 @@ def calculate_factorial(n: int) -> int:
 
 Copilot va proposer le corps de la fonction en se basant sur le nom explicite et les types.
 
-#### Écrire un commentaire descriptif
+### Écrire un commentaire descriptif
 
 ```python
 def bubble_sort(arr: list[int]) -> list[int]:
-    """Tri à bulles, retourne une nouvelle liste triée."""
+ """Tri à bulles, retourne une nouvelle liste triée."""
 ```
 
 Le commentaire guide Copilot sur l'algorithme attendu.
 
-#### Créer une structure de données
+### Créer une structure de données
 
 ```python
 @dataclass
 class Employee:
-    name: str
-    age: int
-    salary: float
+ name: str
+ age: int
+ salary: float
 ```
 
 Copilot pourra suggérer des méthodes cohérentes (__str__, from_dict, to_dict, etc.).
 
-#### Nommer une variable de manière explicite
+### Nommer une variable de manière explicite
 
 ```python
 max_retry_count = 3
@@ -151,7 +219,7 @@ input_file = open("data.csv", encoding="utf-8")
 
 Des noms de variables clairs aident Copilot à comprendre l'intention du code.
 
-### Le contexte compte
+## 2.3 Le contexte compte
 
 Copilot ne se base pas uniquement sur la ligne en cours. Il analyse un **contexte élargi** :
 
@@ -161,9 +229,9 @@ Si vous avez `models.py` ouvert avec des dataclasses, Copilot les utilisera pour
 **Les imports influencent les suggestions :**
 
 ```python
-from fastapi import APIRouter      # Copilot suggère des endpoints REST
-import pandas as pd               # Copilot suggère du traitement de données
-import asyncio                    # Copilot suggère du code async
+from fastapi import APIRouter # Copilot suggère des endpoints REST
+import pandas as pd # Copilot suggère du traitement de données
+import asyncio # Copilot suggère du code async
 ```
 
 **Le code environnant guide la génération :**
@@ -172,15 +240,15 @@ Si les fonctions précédentes utilisent un style particulier (gestion d'erreurs
 ```python
 # Si votre code existant fait ceci :
 try:
-    result = fetch_data(url)
+ result = fetch_data(url)
 except RequestError as exc:
-    logger.error("Échec requête %s: %s", url, exc)
-    raise
+ logger.error("Échec requête %s: %s", url, exc)
+ raise
 
 # Copilot reproduira ce pattern de gestion d'erreur
 ```
 
-### La fenêtre de contexte (context window)
+## 2.4 La fenêtre de contexte (context window)
 
 La **fenêtre de contexte** (ou _context window_) est la quantité maximale de texte — code, commentaires, historique de chat, instructions du projet — que le modèle peut prendre en compte **en une seule requête**.
 
@@ -192,12 +260,12 @@ La **fenêtre de contexte** (ou _context window_) est la quantité maximale de t
 
 **Pourquoi c'est important :**
 
-| Conséquence                       | Explication |
+| Conséquence | Explication |
 | --------------------------------- | ----------- |
-| **Perte de contexte**             | Un gros fichier + historique chat peuvent faire « oublier » le début. |
-| **Suggestions moins cohérentes**  | Si vos conventions ne tiennent plus dans la fenêtre, Copilot revient à des patterns génériques. |
+| **Perte de contexte** | Un gros fichier + historique chat peuvent faire « oublier » le début. |
+| **Suggestions moins cohérentes** | Si vos conventions ne tiennent plus dans la fenêtre, Copilot revient à des patterns génériques. |
 | **Réponses incomplètes en Agent** | Sur un gros dépôt, l'agent doit cibler les bons fichiers. |
-| **Coût de qualité du prompt**     | Un contexte pertinent vaut mieux qu'un contexte volumineux. |
+| **Coût de qualité du prompt** | Un contexte pertinent vaut mieux qu'un contexte volumineux. |
 
 **Bonnes pratiques pour optimiser la fenêtre :**
 
@@ -207,7 +275,7 @@ La **fenêtre de contexte** (ou _context window_) est la quantité maximale de t
 - Découper les grosses refontes en étapes (module par module).
 - Centraliser les règles du projet dans les **Instructions** (voir Module 4).
 
-### L'art du commentaire-prompt
+## 2.5 L'art du commentaire-prompt
 
 En Python, les docstrings et les type hints guident Copilot.
 
@@ -221,10 +289,10 @@ En Python, les docstrings et les type hints guident Copilot.
 
 ```python
 def insertion_sort(arr: list[int]) -> list[int]:
-    """Tri par insertion, ordre croissant. O(n²) pire cas. Retourne une copie."""
+ """Tri par insertion, ordre croissant. O(n²) pire cas. Retourne une copie."""
 ```
 
-### Principes de base
+## 2.6 Principes de base
 
 **Être spécifique et précis :**
 
@@ -234,14 +302,14 @@ def insertion_sort(arr: list[int]) -> list[int]:
 
 # ✅ Précis
 def read_lines(file_path: str) -> list[str]:
-    """Lit un fichier texte ligne par ligne. Lève FileNotFoundError si absent."""
+ """Lit un fichier texte ligne par ligne. Lève FileNotFoundError si absent."""
 ```
 
 **Donner du contexte :**
 
 ```python
 def find_free_block(size: int) -> memoryview | None:
-    """Recherche un bloc libre dans la free list (stratégie first-fit)."""
+ """Recherche un bloc libre dans la free list (stratégie first-fit)."""
 ```
 
 **Décomposer les problèmes complexes :**
@@ -255,31 +323,31 @@ def insert_employee(employees: list[Employee], emp: Employee) -> list[Employee]:
 **Itérer sur les suggestions :**
 Si la première suggestion ne convient pas, utiliser `Alt + ]` pour voir les alternatives, ou reformuler le commentaire.
 
-### Structure d'un bon prompt
+## 2.7 Structure d'un bon prompt
 
 Un prompt efficace suit la structure **Quoi / Comment / Contraintes** :
 
 ```python
 def binary_search(arr: list[int], target: int) -> int:
-    """
-    QUOI : Recherche dans un tableau trié
-    COMMENT : Dichotomie
-    CONTRAINTES : arr trié croissant ; retourne l'index ou -1
-    """
+ """
+ QUOI : Recherche dans un tableau trié
+ COMMENT : Dichotomie
+ CONTRAINTES : arr trié croissant ; retourne l'index ou -1
+ """
 ```
 
 Autre exemple :
 
 ```python
 def deep_copy_list(head: Node | None) -> Node | None:
-    """
-    QUOI : Copie profonde d'une liste chaînée
-    COMMENT : Parcours itératif, nouveaux nœuds
-    CONTRAINTES : retourne None si head est None ; pas de mutation de l'original
-    """
+ """
+ QUOI : Copie profonde d'une liste chaînée
+ COMMENT : Parcours itératif, nouveaux nœuds
+ CONTRAINTES : retourne None si head est None ; pas de mutation de l'original
+ """
 ```
 
-### Itération et raffinement
+## 2.8 Itération et raffinement
 
 **Accepter partiellement une suggestion :**
 Utiliser `Ctrl + →` (accepter mot par mot) quand le début de la suggestion est bon mais la suite diverge.
@@ -292,7 +360,7 @@ Utiliser `Ctrl + →` (accepter mot par mot) quand le début de la suggestion es
 
 # Deuxième essai — plus précis
 def quicksort(arr: list[int]) -> list[int]:
-    """Quicksort, pivot médian, fallback insertion si len < 10."""
+ """Quicksort, pivot médian, fallback insertion si len < 10."""
 ```
 
 **Combiner plusieurs suggestions :**
@@ -300,18 +368,33 @@ Accepter une suggestion pour le squelette, puis supprimer certaines parties et r
 
 ---
 
-## Module 3 : Chat et modes d'interaction
+---
 
-### Les modes du Chat — Ask, Edit, Plan, Agent
+# Module 3 — Chat et modes d'interaction
+
+Après les [completions inline](/formations/fr-github-copilot-python/module-02-completions-inline), Ce module présente **Copilot Chat** pour diagnostiquer des bugs et planifier des refactorings Python.
+
+**Durée indicative :** 3 h.
+
+## Objectifs
+
+- Utiliser les modes Ask, Edit, Plan et Agent.
+- Sélectionner le contexte (@workspace, #file, sélection).
+- Employer les commandes slash (/explain, /fix, /tests).
+- Comprendre l'indexation sémantique du dépôt.
+
+---
+
+## 3.1 Les modes du Chat — Ask, Edit, Plan, Agent
 
 Copilot Chat propose plusieurs **modes** selon le niveau d'autonomie souhaité. Ils partagent les **Instructions** du projet ; seuls **Agent** et partiellement **Ask** exploitent les **Skills** (voir Module 4).
 
-| Mode       | Autonomie | Comportement                                      | Exemple en Python                          |
+| Mode | Autonomie | Comportement | Exemple en Python |
 | ---------- | --------- | ------------------------------------------------- | ------------------------------------------------- |
-| **Ask**    | Faible    | Répond, explique, ne modifie pas les fichiers     | « Explique ce décorateur et son ordre d'application »           |
-| **Edit**   | Moyenne   | Modifie le code sélectionné ou le fichier actif | « Ajoute les type hints manquants sur cette fonction »     |
-| **Plan**   | Moyenne   | Produit un plan détaillé avant d'agir             | « Plan pour migrer ce module vers async/await »  |
-| **Agent**  | Élevée    | Planifie, édite, exécute, itère                  | « Corrige toutes les erreurs mypy sur src/ »    |
+| **Ask** | Faible | Répond, explique, ne modifie pas les fichiers | « Explique ce décorateur et son ordre d'application » |
+| **Edit** | Moyenne | Modifie le code sélectionné ou le fichier actif | « Ajoute les type hints manquants sur cette fonction » |
+| **Plan** | Moyenne | Produit un plan détaillé avant d'agir | « Plan pour migrer ce module vers async/await » |
+| **Agent** | Élevée | Planifie, édite, exécute, itère | « Corrige toutes les erreurs mypy sur src/ » |
 
 **Ask** — comprendre du code sans modification :
 
@@ -332,7 +415,7 @@ Copilot Chat propose plusieurs **modes** selon le niveau d'autonomie souhaité. 
 - Accès terminal, multi-fichiers, index sémantique
 - Active automatiquement les **Skills** pertinents
 
-### Interface conversationnelle
+## 3.2 Interface conversationnelle
 
 Ouvrir le panneau Chat : `Ctrl + Shift + I` (ou `Cmd + Shift + I` sur Mac).
 
@@ -348,16 +431,16 @@ Ouvrir le panneau Chat : `Ctrl + Shift + I` (ou `Cmd + Shift + I` sur Mac).
 Sélectionner un bloc de code complexe puis demander dans le chat :
 "Explique ce code étape par étape, en particulier la gestion des exceptions et les type hints"
 
-### Commandes slash
+## 3.3 Commandes slash
 
-| Commande   | Action                                              |
+| Commande | Action |
 | ---------- | --------------------------------------------------- |
-| `/explain` | Explique le code sélectionné                        |
-| `/fix`     | Propose une correction pour le code sélectionné     |
-| `/tests`   | Génère des tests pour le code sélectionné           |
-| `/doc`     | Génère la documentation (docstrings Google ou NumPy) |
-| `/new`     | Crée un nouveau fichier/projet                      |
-| `/clear`   | Efface l'historique du chat                         |
+| `/explain` | Explique le code sélectionné |
+| `/fix` | Propose une correction pour le code sélectionné |
+| `/tests` | Génère des tests pour le code sélectionné |
+| `/doc` | Génère la documentation (docstrings Google ou NumPy) |
+| `/new` | Crée un nouveau fichier/projet |
+| `/clear` | Efface l'historique du chat |
 
 **Exemple avec `/doc` :**
 
@@ -367,23 +450,23 @@ def add_node(linked_list: LinkedList, data: object) -> int:
 
 ```python
 def add_node(linked_list: LinkedList, data: object) -> int:
-    """
-    Ajoute un nœud en tête de la liste chaînée.
+ """
+ Ajoute un nœud en tête de la liste chaînée.
 
-    Args:
-        linked_list: Liste cible.
-        data: Données à stocker.
+ Args:
+ linked_list: Liste cible.
+ data: Données à stocker.
 
-    Returns:
-        Index du nœud créé, ou -1 en cas d'erreur.
-    """
+ Returns:
+ Index du nœud créé, ou -1 en cas d'erreur.
+ """
 ```
 
-### Sélection de contexte
+## 3.4 Sélection de contexte
 
 Surligner un bloc de code, puis ouvrir le chat → Copilot comprend que la question porte sur ce code précis.
 
-### Indexation sémantique du codebase
+## 3.5 Indexation sémantique du codebase
 
 L'**indexation sémantique** permet à Copilot de **comprendre le sens** du code du projet, pas seulement de faire correspondre des mots-clés.
 
@@ -393,11 +476,11 @@ L'**indexation sémantique** permet à Copilot de **comprendre le sens** du code
 - Une question du type « Où est gérée la validation ? » ou `@workspace trouve les handlers dupliqués` s'appuie sur cette index.
 - Les résultats pertinents sont injectés dans la fenêtre de contexte.
 
-| Approche                          | Limite |
+| Approche | Limite |
 | --------------------------------- | ------ |
 | Fichiers ouverts + ligne courante | Ne couvre que ce que vous avez sous les yeux |
-| Recherche par nom de symbole      | Rate les implémentations sous un autre nom |
-| **Index sémantique**              | Retrouve du code par **intention** (« parsing CSV », « session SQLAlchemy », « gestion d'erreur HTTP ») |
+| Recherche par nom de symbole | Rate les implémentations sous un autre nom |
+| **Index sémantique** | Retrouve du code par **intention** (« parsing CSV », « session SQLAlchemy », « gestion d'erreur HTTP ») |
 
 **Bonnes pratiques :**
 
@@ -405,7 +488,7 @@ L'**indexation sémantique** permet à Copilot de **comprendre le sens** du code
 - Formuler des requêtes avec des **concepts** (« dataclass », « générateur », « context manager »).
 - Combiner index sémantique + `#file:src/services/parser.py`.
 
-### Mode Agent en pratique
+## 3.6 Mode Agent en pratique
 
 Le **mode Agent** est le point d'application des **Skills** et **Instructions** configurés au Module 4.
 
@@ -428,7 +511,7 @@ Mode Agent : « Corrige toutes les erreurs mypy et ruff sur src/ »
 - Laisser l'indexation sémantique se terminer sur les gros dépôts
 - Vérifier manuellement le diff avant commit
 
-### Mode Cloud (aperçu)
+## 3.7 Mode Cloud (aperçu)
 
 Le mode Cloud permet d'exécuter des tâches Copilot sur l'infrastructure GitHub :
 
@@ -439,21 +522,39 @@ Le mode Cloud permet d'exécuter des tâches Copilot sur l'infrastructure GitHub
 
 ---
 
-## Module 4 : Architecture agentique — Agent, Skills, Instructions
+---
+
+# Module 4 — Agent, Skills et Instructions
+
+Dans le [module 3](/formations/fr-github-copilot-python/module-03-chat-modes), nous avons exploré le Chat. Ce module détaille la **personnalisation agentique** : Instructions, Skills et mode Agent.
+
+**Durée indicative :** 4 h.
+
+## Objectifs
+
+- Rédiger `.github/copilot-instructions.md` adapté au projet Python.
+- Créer un Skill métier (lint, tests, typecheck).
+- Lire le schéma Instructions → Skills → Agent.
+- Tester la personnalisation en mode Agent.
+
+---
 
 Après les completions inline (Module 2) et le Chat (Module 3), ce module détaille la **personnalisation agentique** : Instructions, Skills et mode Agent.
 
-### Vue d'ensemble
+> [!note] Définition — Instructions
+> Règles **permanentes** du dépôt, injectées à chaque interaction (inline, chat, agent). Fichier : `.github/copilot-instructions.md`.
 
-| Concept          | Rôle                                      | Quand c'est actif                          | Fichier typique                          |
+## 4.1 Vue d'ensemble
+
+| Concept | Rôle | Quand c'est actif | Fichier typique |
 | ---------------- | ----------------------------------------- | ------------------------------------------ | ---------------------------------------- |
-| **Instructions** | Règles permanentes du projet              | **Toujours** (inline, chat, agent)         | `.github/copilot-instructions.md`        |
-| **Skill**        | Workflow spécialisé, chargé à la demande  | Quand la tâche correspond à la description | `.github/skills/<nom>/SKILL.md`          |
-| **Agent**        | Mode autonome qui planifie et exécute     | Sur demande explicite (mode Agent)         | Interface Chat ou Copilot CLI            |
+| **Instructions** | Règles permanentes du projet | **Toujours** (inline, chat, agent) | `.github/copilot-instructions.md` |
+| **Skill** | Workflow spécialisé, chargé à la demande | Quand la tâche correspond à la description | `.github/skills/<nom>/SKILL.md` |
+| **Agent** | Mode autonome qui planifie et exécute | Sur demande explicite (mode Agent) | Interface Chat ou Copilot CLI |
 
 Les **Instructions** définissent _comment coder dans ce dépôt_. Les **Skills** enseignent _comment accomplir une tâche répétitive_. L'**Agent** _orchestre_ le tout.
 
-### Qu'est-ce qu'un Agent ?
+## 4.2 Qu'est-ce qu'un Agent ?
 
 Un **agent** Copilot est un assistant **autonome** capable de :
 
@@ -474,17 +575,17 @@ Mode Agent : « Corrige toutes les erreurs mypy sur ce package »
 → Relance pytest
 ```
 
-### Qu'est-ce qu'une Instruction ?
+## 4.3 Qu'est-ce qu'une Instruction ?
 
 Les **Instructions** sont des consignes **permanentes** injectées à **chaque** interaction.
 
 Elles répondent à : _« Quelles sont les règles de ce projet Python ? »_
 
-| Fichier                              | Portée                                              |
+| Fichier | Portée |
 | ------------------------------------ | --------------------------------------------------- |
-| `.github/copilot-instructions.md`    | Global — tout le dépôt                              |
-| `.github/instructions/*.md`          | Par chemin (applyTo: "src/**/*.py")                |
-| Instructions utilisateur (paramètres)| Tous vos projets                                    |
+| `.github/copilot-instructions.md` | Global — tout le dépôt |
+| `.github/instructions/*.md` | Par chemin (applyTo: "src/**/*.py") |
+| Instructions utilisateur (paramètres)| Tous vos projets |
 
 **Exemple pour un projet Python :**
 
@@ -503,11 +604,11 @@ Elles répondent à : _« Quelles sont les règles de ce projet Python ? »_
 
 - Conventions de nommage et style
 - PEP 8, type hints, contraintes framework (Django ORM, Pydantic)
-- Consignes pédagogiques (ne pas compléter les TODO des exercices)
+- Consignes pédagogiques (ne pas compléter les zones à implémenter des exercices)
 
 > Les Instructions restent **courtes et générales**. Pour un workflow détaillé, préférer un **Skill**.
 
-### Qu'est-ce qu'un Skill ?
+## 4.4 Qu'est-ce qu'un Skill ?
 
 Un **Skill** est un dossier avec `SKILL.md` et, optionnellement, scripts et références. Copilot le **charge quand la tâche correspond** à la description.
 
@@ -516,11 +617,11 @@ Un **Skill** est un dossier avec `SKILL.md` et, optionnellement, scripts et réf
 ```
 .github/skills/
 └── type-and-lint/
-    ├── SKILL.md
-    ├── scripts/
-    │   └── run_checks.sh
-    └── references/
-        └── patterns.md
+ ├── SKILL.md
+ ├── scripts/
+ │ └── run_checks.sh
+ └── references/
+ └── patterns.md
 ```
 
 **Exemple de `SKILL.md` :**
@@ -548,61 +649,61 @@ description: Vérifie mypy et ruff sur un projet Python. Utiliser quand l'utilis
 
 **Instructions vs Skill :**
 
-|                    | Instructions                         | Skill                                      |
+| | Instructions | Skill |
 | ------------------ | ------------------------------------ | ------------------------------------------ |
-| **Contenu**        | Règles courtes, standards du projet  | Workflow détaillé, scripts, références     |
-| **Activation**     | Toujours                               | Seulement si la tâche est pertinente       |
-| **Exemple**        | « type hints obligatoires, PEP 8 »         | « Procédure complète mypy + ruff + pytest »    |
+| **Contenu** | Règles courtes, standards du projet | Workflow détaillé, scripts, références |
+| **Activation** | Toujours | Seulement si la tâche est pertinente |
+| **Exemple** | « type hints obligatoires, PEP 8 » | « Procédure complète mypy + ruff + pytest » |
 
-### Schéma explicatif — comment tout s'articule
+## 4.5 Schéma explicatif — comment tout s'articule
 
 ```mermaid
 flowchart TB
-    subgraph Dev["👤 Développeur"]
-        Q["Prompt / demande<br/>ex. « Corrige les erreurs mypy »"]
-    end
+ subgraph Dev["👤 Développeur"]
+ Q["Prompt / demande<br/>ex. « Corrige les erreurs mypy »"]
+ end
 
-    subgraph Modes["Modes Copilot"]
-        direction TB
-        Inline["Completion inline<br/>suggestion à la ligne"]
-        Ask["Chat — Ask"]
-        Edit["Chat — Edit"]
-        Plan["Chat — Plan"]
-        Agent["Mode Agent<br/>autonomie complète"]
-    end
+ subgraph Modes["Modes Copilot"]
+ direction TB
+ Inline["Completion inline<br/>suggestion à la ligne"]
+ Ask["Chat — Ask"]
+ Edit["Chat — Edit"]
+ Plan["Chat — Plan"]
+ Agent["Mode Agent<br/>autonomie complète"]
+ end
 
-    subgraph Perso["Personnalisation du dépôt"]
-        Inst["Instructions<br/>.github/copilot-instructions.md"]
-        Skill["Skills<br/>.github/skills/&lt;nom&gt;/SKILL.md"]
-        PromptF["Prompts<br/>.github/prompts/*.md"]
-    end
+ subgraph Perso["Personnalisation du dépôt"]
+ Inst["Instructions<br/>.github/copilot-instructions.md"]
+ Skill["Skills<br/>.github/skills/&lt;nom&gt;/SKILL.md"]
+ PromptF["Prompts<br/>.github/prompts/*.md"]
+ end
 
-    subgraph Outils["Outils de l'agent"]
-        Term["Terminal<br/>pytest, mypy, ruff"]
-        Files["Édition multi-fichiers"]
-        Search["Index sémantique"]
-    end
+ subgraph Outils["Outils de l'agent"]
+ Term["Terminal<br/>pytest, mypy, ruff"]
+ Files["Édition multi-fichiers"]
+ Search["Index sémantique"]
+ end
 
-    Q --> Inline
-    Q --> Ask
-    Q --> Edit
-    Q --> Plan
-    Q --> Agent
+ Q --> Inline
+ Q --> Ask
+ Q --> Edit
+ Q --> Plan
+ Q --> Agent
 
-    Inst -.->|"Toujours"| Inline
-    Inst -.->|"Toujours"| Ask
-    Inst -.->|"Toujours"| Edit
-    Inst -.->|"Toujours"| Agent
+ Inst -.->|"Toujours"| Inline
+ Inst -.->|"Toujours"| Ask
+ Inst -.->|"Toujours"| Edit
+ Inst -.->|"Toujours"| Agent
 
-    Skill -.->|"Si pertinent"| Agent
-    Skill -.->|"Si pertinent"| Ask
+ Skill -.->|"Si pertinent"| Agent
+ Skill -.->|"Si pertinent"| Ask
 
-    Agent --> Term
-    Agent --> Files
-    Agent --> Search
-    Agent -->|"Itérer"| Agent
+ Agent --> Term
+ Agent --> Files
+ Agent --> Search
+ Agent -->|"Itérer"| Agent
 
-    Plan -->|"Plan validé →"| Agent
+ Plan -->|"Plan validé →"| Agent
 ```
 
 **Lecture du schéma :**
@@ -612,7 +713,7 @@ flowchart TB
 3. **Agent** : terminal + éditions + itérations.
 4. **Completion inline** : rapide, localisée ; bénéficie des Instructions.
 
-### Mise en place minimale pour un projet Python
+## 4.6 Mise en place minimale pour un projet Python
 
 **Étape 1 — Instructions globales** (`.github/copilot-instructions.md`)
 
@@ -626,7 +727,7 @@ flowchart TB
 @workspace Corrige les erreurs mypy et ruff sur src/
 ```
 
-### Prompts réutilisables (complément)
+## 4.7 Prompts réutilisables (complément)
 
 ```markdown
 <!-- .github/prompts/new-module.prompt.md -->
@@ -641,11 +742,26 @@ Crée un nouveau module Python avec :
 
 ---
 
-## Module 5 : Path-specific, skills avancés, commit, review
+---
+
+# Module 5 — Path-specific, commit et review
+
+Dans le [module 4](/formations/fr-github-copilot-python/module-04-agent-skills), nous avons posé les Instructions globales. Ce module montre comment affiner Copilot **par zone du dépôt** : API, tests et code source Python n'obéissent pas aux mêmes règles.
+
+**Durée indicative :** 3 h.
+
+## Objectifs
+
+- Configurer des instructions path-specific (applyTo).
+- Créer des Skills avancés avec scripts.
+- Générer des messages de commit avec Copilot.
+- Lancer une revue de code assistée.
+
+---
 
 Les concepts **Agent**, **Skill** et **Instruction** sont détaillés au **Module 4**.
 
-### Instructions spécifiques par chemin (path-specific)
+## 5.1 Instructions spécifiques par chemin (path-specific)
 
 Les instructions **path-specific** ne s'activent que lorsque Copilot travaille sur des fichiers correspondant à un **glob**.
 
@@ -688,7 +804,7 @@ applyTo: "exercices/**/*.py"
 
 # Contexte pédagogique — exercices étudiants
 
-- Laisser les blocs TODO intacts
+- Laisser les zones à compléter intactes
 - Suggérer des indices en commentaire plutôt que des solutions complètes
 - Respecter les noms de fonctions imposés par l'énoncé
 ```
@@ -711,7 +827,7 @@ applyTo: "exercices/**/*.py"
 - Doc lourde dans `references/` pour préserver la fenêtre de contexte
 - Affiner la `description` YAML — **déclencheur** de sélection
 
-### Prompts réutilisables (`.github/prompts/`)
+## 5.2 Prompts réutilisables (`.github/prompts/`)
 
 ```markdown
 <!-- .github/prompts/new-module.prompt.md -->
@@ -724,7 +840,7 @@ Crée un nouveau module Python avec :
 - Docstrings Google sur chaque export public
 ```
 
-### Commit automatique
+## 5.3 Commit automatique
 
 - Cliquer sur l'icône Copilot dans Source Control
 - Copilot analyse le diff et propose un message (Conventional Commits si configuré)
@@ -739,7 +855,7 @@ feat(parser): add CSV parsing with quoted field support
 - Add error reporting with line numbers
 ```
 
-### Code review sur les commits en cours
+## 5.4 Code review sur les commits en cours
 
 - Source Control → "Review Changes" avec Copilot
 - Particulièrement utile en Python pour détecter :
@@ -749,7 +865,7 @@ feat(parser): add CSV parsing with quoted field support
 - Mutabilité par défaut (arguments list/dict mutables)
 - Secrets ou tokens en dur dans le code
 
-### Fine tuning et personnalisation
+## 5.5 Fine tuning et personnalisation
 
 - Les **Instructions** (Module 4) influencent toutes les suggestions
 - Les **Skills** standardisent les workflows répétitifs
@@ -757,9 +873,24 @@ feat(parser): add CSV parsing with quoted field support
 
 ---
 
-## Module 6 : Bonnes pratiques et productivité
+---
 
-### Validation du code généré
+# Module 6 — Bonnes pratiques et productivité
+
+Dans le [module 5](/formations/fr-github-copilot-python/module-05-path-specific-review), nous avons affiné la gouvernance. Ce module clôt la formation : **quand** faire confiance à Copilot et **comment** valider le code Python généré.
+
+**Durée indicative :** 2 h.
+
+## Objectifs
+
+- Appliquer une checklist de validation sur le code généré.
+- Identifier les cas d'usage adaptés (et inadaptés) à Copilot.
+- Adopter un workflow de productivité durable.
+- Formaliser les bonnes pratiques d'équipe.
+
+---
+
+## 6.1 Validation du code généré
 
 Le code Python généré par Copilot nécessite une vigilance particulière :
 
@@ -785,7 +916,7 @@ ruff format --check src/
 pytest
 ```
 
-### Quand utiliser Copilot
+## 6.2 Quand utiliser Copilot
 
 **Code répétitif ou boilerplate :**
 
@@ -805,13 +936,13 @@ Copilot connaît les implémentations standards et le boilerplate (FastAPI, SQLA
 ```python
 # Demander : "Génère les tests pytest pour binary_search"
 def test_binary_search_found():
-    assert binary_search([1, 3, 5, 7, 9], 7) == 3
+ assert binary_search([1, 3, 5, 7, 9], 7) == 3
 
 def test_binary_search_not_found():
-    assert binary_search([1, 3, 5, 7, 9], 4) == -1
+ assert binary_search([1, 3, 5, 7, 9], 4) == -1
 ```
 
-### Quand être prudent
+## 6.3 Quand être prudent
 
 **Code critique pour la sécurité :** toujours relire et tester en profondeur.
 
@@ -821,7 +952,7 @@ def test_binary_search_not_found():
 
 **Performance critique :** Copilot génère du code fonctionnel mais rarement optimal. Pour du NumPy/pandas intensif ou des boucles critiques, l'expertise humaine reste indispensable.
 
-### Productivité optimale
+## 6.4 Productivité optimale
 
 - Lire et comprendre chaque suggestion avant de l'accepter
 - Copilot accélère l'écriture, il ne dispense pas de la réflexion
