@@ -4,23 +4,40 @@
 
 ## Exercice — Commentaires-prompts algorithmiques
 
+**Notions mobilisées :** sections 2.5–2.6 (Quoi/Comment/Contraintes, itération).
+
 ### Énoncé
 
-1. Créez `src/utils/algorithms.py`.
-2. **Stub A** — commentaire vague `# trier` puis prompt structuré :
+1. Créez `src/utils/sort.py`.
+2. **Stub A** — copiez le stub vague, déclenchez une complétion (`Alt + \`), notez pourquoi la suggestion est insuffisante :
 
-```python
-def insertion_sort(arr: list[int]) -> list[int]:
-    """QUOI : tri par insertion. COMMENT : O(n²), copie immuable. CONTRAINTES : ordre croissant."""
+```py
+# trier un tableau
+def insertion_sort(values: list[int]) -> list[int]:
 ```
 
-3. **Stub B** — recherche dichotomique :
+3. Remplacez par un commentaire structuré Quoi/Comment/Contraintes (tri par insertion, copie immuable) :
 
-```python
-def binary_search(arr: list[int], target: int) -> int:
-    """QUOI : recherche dichotomique. CONTRAINTES : tableau trié, retourne index ou -1."""
+```py
+def insertion_sort(values: list[int]) -> list[int]:
+    """
+    QUOI : Tri par insertion sur liste de nombres.
+    COMMENT : parcours O(n²), copie immuable.
+    CONTRAINTES : retourne une nouvelle liste triée croissante.
+    """
 ```
 
-4. Documentez les itérations pour chaque stub.
+4. **Stub B** — même démarche pour la recherche dichotomique (tableau trié, retourne index ou -1) :
+
+```py
+# recherche dichotomique
+def binary_search(values: list[int], target: int) -> int:
+```
+
+5. Pour chaque stub, documentez le nombre d itérations avant une suggestion acceptable.
+
+**Critère de réussite :** deux fonctions avec prompts précis ; algorithme correct ; bilan d itération documenté.
+
+**Documentation :** [Best practices](https://docs.github.com/copilot/get-started/best-practices-for-using-github-copilot)
 
 > **Correction** : [Accéder à la correction](../correction/fr/correction-02-completions-inline.md)

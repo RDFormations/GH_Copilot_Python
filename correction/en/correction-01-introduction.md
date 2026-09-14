@@ -15,8 +15,8 @@ Verify Copilot works before continuing to the next modules.
 ### Step 2 — Signature and comment
 
 ```py
-/** Format ticket ID: FB- prefix, 5-digit zero-padded number. */
-def format_id(ticket_id: int) -> str: {
+/** Format an ID: ID- prefix, 5-digit zero-padded number. */
+def format_id(item_id: int) -> str: {
 ```
 
 ### Step 3 — Accept and test
@@ -28,7 +28,7 @@ def format_id(ticket_id: int) -> str: {
 | Symptom | Fix |
 | -------- | ----- |
 | No suggestion | Check Copilot license and GitHub sign-in |
-| Wrong format (FB-42) | Specify zero-padding in comment |
+| Wrong format (ID-42) | Specify zero-padding in comment |
 
 
 ## Documentation

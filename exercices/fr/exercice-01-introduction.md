@@ -15,7 +15,7 @@
 3. Saisissez la signature avec un commentaire décrivant le format `ID-00042` (sans implémenter le corps) :
 
 ```py
-def format_id(ticket_id: int) -> str:
+def format_id(item_id: int) -> str:
 ```
 
 4. Acceptez la complétion avec `Tab` (ou partiellement `Ctrl + →`).

@@ -1,6 +1,6 @@
 # Exercices — Chat and interaction modes
 
-> **Context** — An SLA calculation contains a bug. Tests fail: deadline is sometimes before createdAt.
+> **Context** — A date calculation module contains a bug. Tests fail: deadline is sometimes before createdAt.
 
 ## Exercice — Ask then Edit on an SLA bug
 
@@ -8,16 +8,16 @@
 
 ### Instructions
 
-1. Create `src/utils/date_calculator.py` avec l échantillon buggy :
+1. Create `src/utils/date_utils.py` avec l échantillon buggy :
 
 ```py
 from datetime import datetime, timedelta
 
 SLA_HOURS = {"low": 72, "normal": 48, "critical": 4}
 
-def add_hours_to_date(created_at: datetime, priority: str) -> datetime:
- hours = SLA_HOURS[priority]
- return created_at - timedelta(hours=hours) # BUG
+def calculate_sla_deadline(created_at: datetime, priority: str) -> datetime:
+    hours = SLA_HOURS[priority]
+    return created_at - timedelta(hours=hours)  # BUG
 ```
 
 2. **Ask** — select the function, ask: "Why can deadline be before createdAt?" Note the faulty line.

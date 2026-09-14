@@ -15,8 +15,8 @@ Vérifiez que Copilot est opérationnel avant de poursuivre les modules suivants
 ### Étape 2 — Signature et commentaire
 
 ```py
-/** Formate un ID ticket : préfixe FB-, numéro sur 5 chiffres. */
-def format_id(ticket_id: int) -> str: {
+/** Formate un identifiant : préfixe ID-, numéro sur 5 chiffres. */
+def format_id(item_id: int) -> str: {
 ```
 
 ### Étape 3 — Acceptation et test
@@ -28,7 +28,7 @@ def format_id(ticket_id: int) -> str: {
 | Symptôme | Piste |
 | -------- | ----- |
 | Pas de suggestion | Vérifier licence Copilot et connexion GitHub |
-| Format incorrect (FB-42) | Préciser zéros à gauche dans le commentaire |
+| Format incorrect (ID-42) | Préciser zéros à gauche dans le commentaire |
 
 
 ## Documentation

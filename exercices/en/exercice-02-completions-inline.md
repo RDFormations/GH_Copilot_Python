@@ -1,26 +1,43 @@
-# Exercices — Completions inline et contexte
+# Exercices — Inline completions and context
 
-> **Context** — Vous implémentez des fonctions utilitaires en **Python**. Des commentaires trop vagues produisent du code générique.
+> **Context** — You implement utility functions in **Python**. Vague comments produce generic code.
 
-## Exercice — Commentaires-prompts algorithmiques
+## Exercice — Algorithm comment-prompts
+
+**Topics :** sections 2.5–2.6 (What/How/Constraints, iteration).
 
 ### Instructions
 
-1. Créez `src/utils/algorithms.py`.
-2. **Stub A** — commentaire vague `# trier` puis prompt structuré :
+1. Create `src/utils/sort.py`.
+2. **Stub A** — copy the vague stub, trigger completion (`Alt + \\`), note why the suggestion is insufficient:
 
-```python
-def insertion_sort(arr: list[int]) -> list[int]:
-    """QUOI : tri par insertion. COMMENT : O(n²), copie immuable. CONTRAINTES : ordre croissant."""
+```py
+# trier un tableau
+def insertion_sort(values: list[int]) -> list[int]:
 ```
 
-3. **Stub B** — recherche dichotomique :
+3. Replace with structured What/How/Constraints (insertion sort, immutable copy):
 
-```python
-def binary_search(arr: list[int], target: int) -> int:
-    """QUOI : recherche dichotomique. CONTRAINTES : tableau trié, retourne index ou -1."""
+```py
+def insertion_sort(values: list[int]) -> list[int]:
+    """
+    QUOI : Tri par insertion sur liste de nombres.
+    COMMENT : parcours O(n²), copie immuable.
+    CONTRAINTES : retourne une nouvelle liste triée croissante.
+    """
 ```
 
-4. Documentez les itérations pour chaque stub.
+4. **Stub B** — same approach for binary search (sorted array, return index or -1):
 
-> **Solution** : [View solution](../correction/en/correction-02-completions-inline.md)
+```py
+# recherche dichotomique
+def binary_search(values: list[int], target: int) -> int:
+```
+
+5. For each stub, document iterations before an acceptable suggestion.
+
+**Success criteria :** two functions with precise prompts; correct algorithm; iteration log documented.
+
+**Documentation :** [Best practices](https://docs.github.com/copilot/get-started/best-practices-for-using-github-copilot)
+
+> **Solution** : [Accéder à la correction](../correction/en/correction-02-completions-inline.md)

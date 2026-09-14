@@ -1,6 +1,6 @@
 # Exercices — Chat et modes d interaction
 
-> **Contexte** — Un calcul de SLA contient un bug. Les tests échouent : la deadline est parfois antérieure à createdAt.
+> **Contexte** — Un module de calcul de dates contient un bug. Les tests échouent : la deadline est parfois antérieure à createdAt.
 
 ## Exercice — Ask puis Edit sur un bug SLA
 
@@ -8,16 +8,16 @@
 
 ### Énoncé
 
-1. Créez `src/utils/date_calculator.py` avec l échantillon buggy :
+1. Créez `src/utils/date_utils.py` avec l échantillon buggy :
 
 ```py
 from datetime import datetime, timedelta
 
 SLA_HOURS = {"low": 72, "normal": 48, "critical": 4}
 
-def add_hours_to_date(created_at: datetime, priority: str) -> datetime:
- hours = SLA_HOURS[priority]
- return created_at - timedelta(hours=hours) # BUG
+def calculate_sla_deadline(created_at: datetime, priority: str) -> datetime:
+    hours = SLA_HOURS[priority]
+    return created_at - timedelta(hours=hours)  # BUG
 ```
 
 2. **Ask** — sélectionnez la fonction, demandez : « Pourquoi la deadline peut être antérieure à createdAt ? » Notez la ligne fautive.
