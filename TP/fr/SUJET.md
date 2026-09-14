@@ -12,7 +12,7 @@ Ce TP en propose une **version réduite**, adaptée à un cours **Python** et à
 
 | Fichier | Rôle |
 | ------- | ---- |
-| `SUJET.md` | Énoncé (ce document) |
+| `fr/SUJET.md` | Énoncé (ce document) |
 | `checker.py` | Vérificateur **standalone** — lit les opérations sur stdin |
 | `scripts/` | Scripts de test (`test_checker_50.sh`, `run_batch_50.sh`) |
 
@@ -121,7 +121,7 @@ python3 src/push_swap.py 42       # Error (un seul entier), exit 1
 
 ```
 TP/
-├── SUJET.md
+├── fr/SUJET.md
 ├── checker.py           # fourni — ne pas modifier
 ├── scripts/
 │   ├── test_checker_50.sh

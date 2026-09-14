@@ -1,15 +1,18 @@
 # GH Copilot — laboratoire Python
 
-Formation GitHub Copilot adaptée au **Python** : cours, exercices guidés et TP mini push_swap.
+Formation GitHub Copilot adaptée au **Python** : cours, exercices guidés (FR/EN) et TP mini push_swap.
 
 ## Contenu
 
 | Dossier | Description |
 | ------- | ----------- |
-| `Cours.md` / `Cours.pdf` | Support de formation (6 modules) |
-| `exercices/` | Fichiers à compléter avec Copilot |
-| `correction/` | Solutions de référence |
-| `TP/` | Mini push_swap — sujet + checker standalone |
+| `Cours.md` / `Cours.pdf` | Support de formation (6 modules, FR) |
+| `exercices/fr/` | Énoncés (FR) + fichiers `.py` à compléter |
+| `exercices/en/` | Exercise sheets (EN) + same `.py` stubs |
+| `correction/fr/` | Corrections (FR) + code corrigé |
+| `correction/en/` | Solutions (EN) + corrected code |
+| `TP/fr/SUJET.md` | Énoncé TP push_swap (français) |
+| `TP/en/SUJET.md` | push_swap assignment (English) |
 
 ## Prérequis
 
@@ -20,18 +23,18 @@ Formation GitHub Copilot adaptée au **Python** : cours, exercices guidés et TP
 ## Exercices
 
 ```bash
-make ex01    # tri à bulles
+make ex01    # tri à bulles (exercices/fr/)
 make ex02    # dataclass Employee + sérialisation
 make ex03    # parsing CSV
 
 make corr01  # correction
 ```
 
-Ou : `python3 exercices/01_bubble_sort.py`
+Énoncés anglais : `exercices/en/exercice-*.md`.
 
 ## TP push_swap
 
-**Fourni aux étudiants :** `TP/SUJET.md`, `TP/checker.py`, `TP/scripts/`.
+**Fourni :** `TP/fr/SUJET.md` ou `TP/en/SUJET.md`, `TP/checker.py`, `TP/scripts/`.
 
 ```bash
 cd TP
@@ -40,5 +43,3 @@ python3 src/push_swap.py 3 1 2 | python3 checker.py 3 1 2
 
 bash scripts/test_checker_50.sh 3
 ```
-
-Voir `TP/SUJET.md` pour l'énoncé complet.
