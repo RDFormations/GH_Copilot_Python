@@ -36,12 +36,12 @@ Chaque module comprend un **cours**, des **exercices** et une **correction**.
 
 ```mermaid
 flowchart LR
- A[Install] --> B[Inline]
- B --> C[Chat]
- C --> D[Instructions]
- D --> S[Skills]
- S --> E[Agent]
- E --> F[Review]
+    A[Install] --> B[Inline]
+    B --> C[Chat]
+    C --> D[Instructions]
+    D --> S[Skills]
+    S --> E[Agent]
+    E --> F[Review]
 ```
 
 **Prochaine étape :** [Module 1 — Introduction](/formations/fr-github-copilot-python/module-01-introduction)
@@ -87,12 +87,12 @@ GitHub Copilot est un assistant de programmation basé sur l'intelligence artifi
 
 GitHub Copilot propose plusieurs **niveaux d'autonomie**. La formation s'articule autour du mode **Agent** et de sa personnalisation (**Instructions**, **Skills**), tout en conservant les **completions inline** pour l'écriture au fil de l'eau.
 
-| Version | Niveau d'autonomie | Description | Usage principal |
+| Version              | Niveau d'autonomie | Description                                    | Usage principal                         |
 | -------------------- | ------------------ | ---------------------------------------------- | --------------------------------------- |
-| **Copilot (inline)** | Faible | Suggestions de code directement dans l'éditeur | Complétion au quotidien, boilerplate |
-| **Copilot Chat** | Moyen | Conversation (Ask, Edit, Plan) | Questions, explications, refactoring |
-| **Mode Agent** | Élevé | Planifie, modifie plusieurs fichiers, exécute | Tâches multi-fichiers, debug, migration |
-| **Copilot CLI** | Élevé | Agent en ligne de commande | Shell, tests, CI, scripts |
+| **Copilot (inline)** | Faible             | Suggestions de code directement dans l'éditeur | Complétion au quotidien, boilerplate    |
+| **Copilot Chat**     | Moyen              | Conversation (Ask, Edit, Plan)                 | Questions, explications, refactoring    |
+| **Mode Agent**       | Élevé              | Planifie, modifie plusieurs fichiers, exécute  | Tâches multi-fichiers, debug, migration |
+| **Copilot CLI**      | Élevé              | Agent en ligne de commande                     | Shell, tests, CI, scripts               |
 
 **Copilot inline** reste le point d'entrée : dès qu'on tape du code, des suggestions apparaissent en gris (`Tab` pour accepter). Voir le **Module 2**.
 
@@ -124,7 +124,7 @@ Créer un fichier `test.py` et commencer à taper :
 
 ```python
 def greet(name: str) -> str:
- """Affiche un message de bienvenue."""
+    """Affiche un message de bienvenue."""
 ```
 
 Si Copilot fonctionne, une suggestion devrait apparaître en gris pour compléter la fonction.
@@ -165,15 +165,15 @@ Les **completions inline** sont le mode le plus utilisé au quotidien. Une fois 
 
 ## 2.1 Raccourcis clavier essentiels
 
-| Action | Raccourci (Windows/Linux) | Raccourci (Mac) |
+| Action                           | Raccourci (Windows/Linux) | Raccourci (Mac) |
 | -------------------------------- | ------------------------- | --------------- |
-| Accepter la suggestion | `Tab` | `Tab` |
-| Rejeter la suggestion | `Échap` | `Échap` |
-| Suggestion suivante | `Alt + ]` | `Option + ]` |
-| Suggestion précédente | `Alt + [` | `Option + [` |
-| Accepter le mot suivant | `Ctrl + →` | `Cmd + →` |
-| Déclencher manuellement | `Alt + \` | `Option + \` |
-| Ouvrir le panneau de suggestions | `Ctrl + Enter` | `Ctrl + Enter` |
+| Accepter la suggestion           | `Tab`                     | `Tab`           |
+| Rejeter la suggestion            | `Échap`                   | `Échap`         |
+| Suggestion suivante              | `Alt + ]`                 | `Option + ]`    |
+| Suggestion précédente            | `Alt + [`                 | `Option + [`    |
+| Accepter le mot suivant          | `Ctrl + →`                | `Cmd + →`       |
+| Déclencher manuellement          | `Alt + \`                 | `Option + \`    |
+| Ouvrir le panneau de suggestions | `Ctrl + Enter`            | `Ctrl + Enter`  |
 
 Le panneau de suggestions (`Ctrl + Enter`) ouvre une fenêtre avec jusqu'à 10 suggestions alternatives. Utile quand la première suggestion ne convient pas.
 
@@ -191,7 +191,7 @@ Copilot va proposer le corps de la fonction en se basant sur le nom explicite et
 
 ```python
 def bubble_sort(arr: list[int]) -> list[int]:
- """Tri à bulles, retourne une nouvelle liste triée."""
+    """Tri à bulles, retourne une nouvelle liste triée."""
 ```
 
 Le commentaire guide Copilot sur l'algorithme attendu.
@@ -201,9 +201,9 @@ Le commentaire guide Copilot sur l'algorithme attendu.
 ```python
 @dataclass
 class Employee:
- name: str
- age: int
- salary: float
+    name: str
+    age: int
+    salary: float
 ```
 
 Copilot pourra suggérer des méthodes cohérentes (__str__, from_dict, to_dict, etc.).
@@ -228,9 +228,9 @@ Si vous avez `models.py` ouvert avec des dataclasses, Copilot les utilisera pour
 **Les imports influencent les suggestions :**
 
 ```python
-from fastapi import APIRouter # Copilot suggère des endpoints REST
-import pandas as pd # Copilot suggère du traitement de données
-import asyncio # Copilot suggère du code async
+from fastapi import APIRouter      # Copilot suggère des endpoints REST
+import pandas as pd               # Copilot suggère du traitement de données
+import asyncio                    # Copilot suggère du code async
 ```
 
 **Le code environnant guide la génération :**
@@ -239,10 +239,10 @@ Si les fonctions précédentes utilisent un style particulier (gestion d'erreurs
 ```python
 # Si votre code existant fait ceci :
 try:
- result = fetch_data(url)
+    result = fetch_data(url)
 except RequestError as exc:
- logger.error("Échec requête %s: %s", url, exc)
- raise
+    logger.error("Échec requête %s: %s", url, exc)
+    raise
 
 # Copilot reproduira ce pattern de gestion d'erreur
 ```
@@ -259,12 +259,12 @@ La **fenêtre de contexte** (ou _context window_) est la quantité maximale de t
 
 **Pourquoi c'est important :**
 
-| Conséquence | Explication |
+| Conséquence                       | Explication |
 | --------------------------------- | ----------- |
-| **Perte de contexte** | Un gros fichier + historique chat peuvent faire « oublier » le début. |
-| **Suggestions moins cohérentes** | Si vos conventions ne tiennent plus dans la fenêtre, Copilot revient à des patterns génériques. |
+| **Perte de contexte**             | Un gros fichier + historique chat peuvent faire « oublier » le début. |
+| **Suggestions moins cohérentes**  | Si vos conventions ne tiennent plus dans la fenêtre, Copilot revient à des patterns génériques. |
 | **Réponses incomplètes en Agent** | Sur un gros dépôt, l'agent doit cibler les bons fichiers. |
-| **Coût de qualité du prompt** | Un contexte pertinent vaut mieux qu'un contexte volumineux. |
+| **Coût de qualité du prompt**     | Un contexte pertinent vaut mieux qu'un contexte volumineux. |
 
 **Bonnes pratiques pour optimiser la fenêtre :**
 
@@ -288,7 +288,7 @@ En Python, les docstrings et les type hints guident Copilot.
 
 ```python
 def insertion_sort(arr: list[int]) -> list[int]:
- """Tri par insertion, ordre croissant. O(n²) pire cas. Retourne une copie."""
+    """Tri par insertion, ordre croissant. O(n²) pire cas. Retourne une copie."""
 ```
 
 ## 2.6 Principes de base
@@ -301,14 +301,14 @@ def insertion_sort(arr: list[int]) -> list[int]:
 
 # ✅ Précis
 def read_lines(file_path: str) -> list[str]:
- """Lit un fichier texte ligne par ligne. Lève FileNotFoundError si absent."""
+    """Lit un fichier texte ligne par ligne. Lève FileNotFoundError si absent."""
 ```
 
 **Donner du contexte :**
 
 ```python
 def find_free_block(size: int) -> memoryview | None:
- """Recherche un bloc libre dans la free list (stratégie first-fit)."""
+    """Recherche un bloc libre dans la free list (stratégie first-fit)."""
 ```
 
 **Décomposer les problèmes complexes :**
@@ -328,22 +328,22 @@ Un prompt efficace suit la structure **Quoi / Comment / Contraintes** :
 
 ```python
 def binary_search(arr: list[int], target: int) -> int:
- """
- QUOI : Recherche dans un tableau trié
- COMMENT : Dichotomie
- CONTRAINTES : arr trié croissant ; retourne l'index ou -1
- """
+    """
+    QUOI : Recherche dans un tableau trié
+    COMMENT : Dichotomie
+    CONTRAINTES : arr trié croissant ; retourne l'index ou -1
+    """
 ```
 
 Autre exemple :
 
 ```python
 def deep_copy_list(head: Node | None) -> Node | None:
- """
- QUOI : Copie profonde d'une liste chaînée
- COMMENT : Parcours itératif, nouveaux nœuds
- CONTRAINTES : retourne None si head est None ; pas de mutation de l'original
- """
+    """
+    QUOI : Copie profonde d'une liste chaînée
+    COMMENT : Parcours itératif, nouveaux nœuds
+    CONTRAINTES : retourne None si head est None ; pas de mutation de l'original
+    """
 ```
 
 ## 2.8 Itération et raffinement
@@ -359,7 +359,7 @@ Utiliser `Ctrl + →` (accepter mot par mot) quand le début de la suggestion es
 
 # Deuxième essai — plus précis
 def quicksort(arr: list[int]) -> list[int]:
- """Quicksort, pivot médian, fallback insertion si len < 10."""
+    """Quicksort, pivot médian, fallback insertion si len < 10."""
 ```
 
 **Combiner plusieurs suggestions :**
@@ -388,12 +388,12 @@ Après les [completions inline](/formations/fr-github-copilot-python/module-02-c
 
 Copilot Chat propose plusieurs **modes** selon le niveau d'autonomie souhaité. Ils partagent les **Instructions** du projet ; seuls **Agent** et partiellement **Ask** exploitent les **Skills** (voir Module 4).
 
-| Mode | Autonomie | Comportement | Exemple en Python |
+| Mode       | Autonomie | Comportement                                      | Exemple en Python                          |
 | ---------- | --------- | ------------------------------------------------- | ------------------------------------------------- |
-| **Ask** | Faible | Répond, explique, ne modifie pas les fichiers | « Explique ce décorateur et son ordre d'application » |
-| **Edit** | Moyenne | Modifie le code sélectionné ou le fichier actif | « Ajoute les type hints manquants sur cette fonction » |
-| **Plan** | Moyenne | Produit un plan détaillé avant d'agir | « Plan pour migrer ce module vers async/await » |
-| **Agent** | Élevée | Planifie, édite, exécute, itère | « Corrige toutes les erreurs mypy sur src/ » |
+| **Ask**    | Faible    | Répond, explique, ne modifie pas les fichiers     | « Explique ce décorateur et son ordre d'application »           |
+| **Edit**   | Moyenne   | Modifie le code sélectionné ou le fichier actif | « Ajoute les type hints manquants sur cette fonction »     |
+| **Plan**   | Moyenne   | Produit un plan détaillé avant d'agir             | « Plan pour migrer ce module vers async/await »  |
+| **Agent**  | Élevée    | Planifie, édite, exécute, itère                  | « Corrige toutes les erreurs mypy sur src/ »    |
 
 **Ask** — comprendre du code sans modification :
 
@@ -432,14 +432,14 @@ Sélectionner un bloc de code complexe puis demander dans le chat :
 
 ## 3.3 Commandes slash
 
-| Commande | Action |
+| Commande   | Action                                              |
 | ---------- | --------------------------------------------------- |
-| `/explain` | Explique le code sélectionné |
-| `/fix` | Propose une correction pour le code sélectionné |
-| `/tests` | Génère des tests pour le code sélectionné |
-| `/doc` | Génère la documentation (docstrings Google ou NumPy) |
-| `/new` | Crée un nouveau fichier/projet |
-| `/clear` | Efface l'historique du chat |
+| `/explain` | Explique le code sélectionné                        |
+| `/fix`     | Propose une correction pour le code sélectionné     |
+| `/tests`   | Génère des tests pour le code sélectionné           |
+| `/doc`     | Génère la documentation (docstrings Google ou NumPy) |
+| `/new`     | Crée un nouveau fichier/projet                      |
+| `/clear`   | Efface l'historique du chat                         |
 
 **Exemple avec `/doc` :**
 
@@ -449,16 +449,16 @@ def add_node(linked_list: LinkedList, data: object) -> int:
 
 ```python
 def add_node(linked_list: LinkedList, data: object) -> int:
- """
- Ajoute un nœud en tête de la liste chaînée.
+    """
+    Ajoute un nœud en tête de la liste chaînée.
 
- Args:
- linked_list: Liste cible.
- data: Données à stocker.
+    Args:
+        linked_list: Liste cible.
+        data: Données à stocker.
 
- Returns:
- Index du nœud créé, ou -1 en cas d'erreur.
- """
+    Returns:
+        Index du nœud créé, ou -1 en cas d'erreur.
+    """
 ```
 
 ## 3.4 Sélection de contexte
@@ -475,11 +475,11 @@ L'**indexation sémantique** permet à Copilot de **comprendre le sens** du code
 - Une question du type « Où est gérée la validation ? » ou `@workspace trouve les handlers dupliqués` s'appuie sur cette index.
 - Les résultats pertinents sont injectés dans la fenêtre de contexte.
 
-| Approche | Limite |
+| Approche                          | Limite |
 | --------------------------------- | ------ |
 | Fichiers ouverts + ligne courante | Ne couvre que ce que vous avez sous les yeux |
-| Recherche par nom de symbole | Rate les implémentations sous un autre nom |
-| **Index sémantique** | Retrouve du code par **intention** (« parsing CSV », « session SQLAlchemy », « gestion d'erreur HTTP ») |
+| Recherche par nom de symbole      | Rate les implémentations sous un autre nom |
+| **Index sémantique**              | Retrouve du code par **intention** (« parsing CSV », « session SQLAlchemy », « gestion d'erreur HTTP ») |
 
 **Bonnes pratiques :**
 
@@ -599,9 +599,9 @@ Fichier à la racine du dépôt (dossier `.github/`). Copilot l'injecte dans **t
 ```
 .github/skills/
 └── lint-and-check/
- ├── SKILL.md
- ├── scripts/
- └── references/
+    ├── SKILL.md
+    ├── scripts/
+    └── references/
 ```
 
 **Exemple `SKILL.md` :**
@@ -752,7 +752,7 @@ applyTo: "exercices/**/*.py"
 
 # Contexte pédagogique — exercices étudiants
 
-- Laisser les zones à compléter intactes
+- Laisser les blocs TODO intacts
 - Suggérer des indices en commentaire plutôt que des solutions complètes
 - Respecter les noms de fonctions imposés par l'énoncé
 ```
@@ -884,10 +884,10 @@ Copilot connaît les implémentations standards et le boilerplate (FastAPI, SQLA
 ```python
 # Demander : "Génère les tests pytest pour binary_search"
 def test_binary_search_found():
- assert binary_search([1, 3, 5, 7, 9], 7) == 3
+    assert binary_search([1, 3, 5, 7, 9], 7) == 3
 
 def test_binary_search_not_found():
- assert binary_search([1, 3, 5, 7, 9], 4) == -1
+    assert binary_search([1, 3, 5, 7, 9], 4) == -1
 ```
 
 ## 6.3 Quand être prudent

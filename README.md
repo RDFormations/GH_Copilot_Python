@@ -1,16 +1,17 @@
 # GH Copilot — laboratoire Python
 
-Formation GitHub Copilot adaptée au **Python** : cours, exercices guidés (FR/EN) et TP mini push_swap.
+Formation GitHub Copilot adaptée au **Python** : cours (FR + EN), exercices guidés et TP mini push_swap.
 
 ## Contenu
 
 | Dossier | Description |
 | ------- | ----------- |
-| `Cours.md` / `Cours.pdf` | Support de formation (6 modules, FR) |
-| `exercices/fr/` | Énoncés (FR) + fichiers `.py` à compléter |
-| `exercices/en/` | Exercise sheets (EN) + same `.py` stubs |
-| `correction/fr/` | Corrections (FR) + code corrigé |
-| `correction/en/` | Solutions (EN) + corrected code |
+| `Cours.md` / `Cours.pdf` | Support FR (6 modules) |
+| `CoursENG.md` / `CoursENG.pdf` | Course material EN (6 modules) |
+| `exercices/fr/` | Énoncés FR + fichiers `.py` à compléter |
+| `exercices/en/` | Exercise sheets EN + same `.py` stubs |
+| `correction/fr/` | Corrections FR + code corrigé |
+| `correction/en/` | Solutions EN + corrected code |
 | `TP/fr/SUJET.md` | Énoncé TP push_swap (français) |
 | `TP/en/SUJET.md` | push_swap assignment (English) |
 

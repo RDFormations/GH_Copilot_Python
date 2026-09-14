@@ -2,7 +2,7 @@
 
 > **Context** — You implement utility functions in **Python**. Vague comments produce generic code.
 
-## Exercice — Algorithm comment-prompts
+## Exercise — Algorithm comment-prompts
 
 **Topics :** sections 2.5–2.6 (What/How/Constraints, iteration).
 
@@ -20,11 +20,11 @@ def insertion_sort(values: list[int]) -> list[int]:
 
 ```py
 def insertion_sort(values: list[int]) -> list[int]:
- """
- QUOI : Tri par insertion sur liste de nombres.
- COMMENT : parcours O(n²), copie immuable.
- CONTRAINTES : retourne une nouvelle liste triée croissante.
- """
+    """
+    QUOI : Tri par insertion sur liste de nombres.
+    COMMENT : parcours O(n²), copie immuable.
+    CONTRAINTES : retourne une nouvelle liste triée croissante.
+    """
 ```
 
 4. **Stub B** — same approach for binary search (sorted array, return index or -1):
@@ -40,4 +40,4 @@ def binary_search(values: list[int], target: int) -> int:
 
 **Documentation :** [Best practices](https://docs.github.com/copilot/get-started/best-practices-for-using-github-copilot)
 
-> **Solution** : [Accéder à la correction](../correction/en/correction-02-completions-inline.md)
+> **Solution** : [View solution](../correction/en/correction-02-completions-inline.md)

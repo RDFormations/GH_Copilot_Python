@@ -2,22 +2,22 @@
 
 > **Context** — A date calculation module contains a bug. Tests fail: deadline is sometimes before createdAt.
 
-## Exercice — Ask then Edit on an SLA bug
+## Exercise — Ask then Edit on an SLA bug
 
 **Prerequisites :** module 3 read; Copilot Chat ready.
 
 ### Instructions
 
-1. Create `src/utils/date_utils.py` avec l échantillon buggy :
+1. Create `src/utils/date_utils.py` with the buggy sample:
 
 ```py
 from datetime import datetime, timedelta
 
 SLA_HOURS = {"low": 72, "normal": 48, "critical": 4}
 
-def add_hours_to_date(created_at: datetime, priority: str) -> datetime:
- hours = SLA_HOURS[priority]
- return created_at - timedelta(hours=hours) # BUG
+def calculate_sla_deadline(created_at: datetime, priority: str) -> datetime:
+    hours = SLA_HOURS[priority]
+    return created_at - timedelta(hours=hours)  # BUG
 ```
 
 2. **Ask** — select the function, ask: "Why can deadline be before createdAt?" Note the faulty line.
@@ -28,4 +28,4 @@ def add_hours_to_date(created_at: datetime, priority: str) -> datetime:
 
 **Success criteria :** correct Ask diagnosis; Edit fix with addition; manual test OK.
 
-> **Solution** : [Accéder à la correction](../correction/en/correction-03-chat-modes.md)
+> **Solution** : [View solution](../correction/en/correction-03-chat-modes.md)
