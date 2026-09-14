@@ -16,11 +16,11 @@ Precise comments significantly improve the quality of generated suggestions.
 
 ```py
 def insertion_sort(values: list[int]) -> list[int]:
-    """
-    QUOI : Tri par insertion sur liste de nombres.
-    COMMENT : parcours O(n²), copie immuable.
-    CONTRAINTES : retourne une nouvelle liste triée croissante.
-    """
+ """
+ QUOI : Tri par insertion sur liste de nombres.
+ COMMENT : parcours O(n²), copie immuable.
+ CONTRAINTES : retourne une nouvelle liste triée croissante.
+ """
 ```
 
 **Verification :** correct sort algorithm with immutable copy.

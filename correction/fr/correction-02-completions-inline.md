@@ -16,11 +16,11 @@ Des commentaires précis améliorent nettement la qualité des suggestions gén�
 
 ```py
 def insertion_sort(values: list[int]) -> list[int]:
-    """
-    QUOI : Tri par insertion sur liste de nombres.
-    COMMENT : parcours O(n²), copie immuable.
-    CONTRAINTES : retourne une nouvelle liste triée croissante.
-    """
+ """
+ QUOI : Tri par insertion sur liste de nombres.
+ COMMENT : parcours O(n²), copie immuable.
+ CONTRAINTES : retourne une nouvelle liste triée croissante.
+ """
 ```
 
 **Vérification :** algorithme de tri correct avec copie immuable.

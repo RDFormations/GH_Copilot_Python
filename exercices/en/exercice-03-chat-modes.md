@@ -15,9 +15,9 @@ from datetime import datetime, timedelta
 
 SLA_HOURS = {"low": 72, "normal": 48, "critical": 4}
 
-def calculate_sla_deadline(created_at: datetime, priority: str) -> datetime:
-    hours = SLA_HOURS[priority]
-    return created_at - timedelta(hours=hours)  # BUG
+def add_hours_to_date(created_at: datetime, priority: str) -> datetime:
+ hours = SLA_HOURS[priority]
+ return created_at - timedelta(hours=hours) # BUG
 ```
 
 2. **Ask** — select the function, ask: "Why can deadline be before createdAt?" Note the faulty line.

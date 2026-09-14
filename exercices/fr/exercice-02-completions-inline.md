@@ -20,11 +20,11 @@ def insertion_sort(values: list[int]) -> list[int]:
 
 ```py
 def insertion_sort(values: list[int]) -> list[int]:
-    """
-    QUOI : Tri par insertion sur liste de nombres.
-    COMMENT : parcours O(n²), copie immuable.
-    CONTRAINTES : retourne une nouvelle liste triée croissante.
-    """
+ """
+ QUOI : Tri par insertion sur liste de nombres.
+ COMMENT : parcours O(n²), copie immuable.
+ CONTRAINTES : retourne une nouvelle liste triée croissante.
+ """
 ```
 
 4. **Stub B** — même démarche pour la recherche dichotomique (tableau trié, retourne index ou -1) :
