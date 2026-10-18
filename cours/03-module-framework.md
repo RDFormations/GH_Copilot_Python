@@ -27,6 +27,26 @@ flowchart TB
 - Ctrl+I ajuste du code déjà écrit. Ctrl+I n'est pas le chat.
 - Ce framework fait gagner du temps.
 
+## Les touches
+
+| Touche | Effet |
+| ------ | ----- |
+| Tab | Accepter la proposition. |
+| Échap | Effacer la proposition. |
+| Ctrl+→ | Le mot suivant. Ou la ligne suivante. |
+| Cmd+→ | Le même geste, sur Mac. |
+
+[Suggestions inline](https://code.visualstudio.com/docs/editing/ai-powered-suggestions) · [Raccourcis clavier](https://docs.github.com/en/copilot/reference/keyboard-shortcuts)
+
+## Le snooze
+
+- Menu Copilot, dans la barre d'état.
+- Chaque appui ajoute 5 minutes.
+- La complétion se tait pendant ce temps.
+- Palette : « Snooze Inline Suggestions ».
+- Reprise : « Cancel Snooze Inline Suggestions ».
+- Aucun raccourci par défaut.
+
 ## La découpe
 
 - Une fonction. Une responsabilité.

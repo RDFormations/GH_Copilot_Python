@@ -38,10 +38,13 @@ flowchart TB
 | Agent | `.github/agents/`<br>`*.agent.md` |
 | Skill | `.github/skills/<nom>/`<br>`SKILL.md` |
 
-## Documentation
+## Les en-têtes
 
-| Sujet | Documentation |
-| ----- | ------------- |
-| Instructions | [Custom instructions](https://code.visualstudio.com/docs/copilot/customization/custom-instructions) |
-| Skills | [Create agent skills](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/create-skills) |
-| Personnalisation | [Response customization](https://docs.github.com/en/copilot/concepts/prompting/response-customization) |
+- Chaque type a sa liste d'en-têtes.
+- La page donne la liste complète.
+
+| Type | En-têtes | Liste |
+| ---- | -------- | ----- |
+| Instruction | `name`<br>`description`<br>`applyTo` | [Liste des en-têtes](https://code.visualstudio.com/docs/agent-customization/custom-instructions#_instructions-file-format) |
+| Agent | `description`<br>`name`<br>`tools` | [Liste des en-têtes](https://code.visualstudio.com/docs/agent-customization/custom-agents#_header-optional) |
+| Skill | `name`<br>`description` | [Liste des en-têtes](https://code.visualstudio.com/docs/agent-customization/agent-skills#_header-required) |
