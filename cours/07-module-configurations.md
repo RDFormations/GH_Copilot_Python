@@ -1,11 +1,11 @@
 ---
-title: "Module 6 — Instructions, agents, skills"
+title: "Module 6 — Les configurations"
 description: "Trois prompts, trois moments."
 published: false
 editor: markdown
 ---
 
-# Module 6 — Instructions, agents, skills
+# Module 6 — Les configurations
 
 Une configuration est un prompt. Il entre dans la requête à un moment précis.
 

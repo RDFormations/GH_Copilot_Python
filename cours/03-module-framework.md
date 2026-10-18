@@ -1,11 +1,11 @@
 ---
-title: "Module 3 — Le framework"
+title: "Module 3 — Commentaires, complétion, Ctrl+I"
 description: "Commentaires, complétion, Ctrl+I."
 published: false
 editor: markdown
 ---
 
-# Module 3 — Le framework
+# Module 3 — Commentaires, complétion, Ctrl+I
 
 Le code qui reste s'écrit avec trois gestes. Toujours dans cet ordre.
 

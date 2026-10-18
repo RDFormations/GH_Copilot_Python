@@ -1,11 +1,11 @@
 ---
-title: "Module 2 — Le chat et le code qui reste"
+title: "Module 2 — Le code qui reste"
 description: "L'agent n'écrit pas le code qui reste."
 published: false
 editor: markdown
 ---
 
-# Module 2 — Le chat et le code qui reste
+# Module 2 — Le code qui reste
 
 > [!note] Définition — Chat
 > L'agent qui écrit le code.

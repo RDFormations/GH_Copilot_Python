@@ -1,11 +1,11 @@
 ---
-title: "Module 5 — L'agent"
+title: "Module 5 — Qu'est-ce qu'un agent"
 description: "Le même middleware, avec une boucle."
 published: false
 editor: markdown
 ---
 
-# Module 5 — L'agent
+# Module 5 — Qu'est-ce qu'un agent
 
 Un agent est le même middleware, avec une boucle.
 

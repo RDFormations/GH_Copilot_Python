@@ -1,11 +1,11 @@
 ---
-title: "Module 4 — Tokens, historique, RAG"
+title: "Module 4 — Ce qui part dans la requête"
 description: "Ce que le modèle lit dans une requête."
 published: false
 editor: markdown
 ---
 
-# Module 4 — Tokens, historique, RAG
+# Module 4 — Ce qui part dans la requête
 
 > [!note] Définition — Token
 > Unité que le modèle lit et produit.

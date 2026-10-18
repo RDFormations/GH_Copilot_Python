@@ -1,11 +1,11 @@
 ---
-title: "Module 1 — Copilot est un middleware"
+title: "Module 1 — Qu'est-ce que Copilot"
 description: "Copilot fabrique la requête, l'envoie, et réinjecte la réponse."
 published: false
 editor: markdown
 ---
 
-# Module 1 — Copilot est un middleware
+# Module 1 — Qu'est-ce que Copilot
 
 Copilot n'est pas le modèle.
 
