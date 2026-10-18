@@ -7,9 +7,7 @@ editor: markdown
 
 # Module 6 — Instructions, agents, skills
 
-Une configuration est un prompt.
-
-Il entre dans la requête à un moment précis.
+Une configuration est un prompt. Il entre dans la requête à un moment précis.
 
 ```mermaid
 flowchart TB
@@ -18,28 +16,21 @@ flowchart TB
   T["Tâche"] --> S["Skill"]
 ```
 
-Les instructions ne partent pas à chaque requête.
-
-Elles partent quand une édition part.
-
-Seulement si le fichier touché correspond au `applyTo`.
+- Les instructions ne partent pas à chaque requête.
+- Elles partent quand une édition part.
+- Seulement si le fichier touché correspond au `applyTo`.
 
 > [!note] Définition — applyTo
 > Motif de chemin.
 > Fichier `*.instructions.md`.
 > L'instruction part si le fichier correspond.
 
-Un agent configuré part au moment du choix.
-
-Il porte le rôle et la liste des outils.
-
-Il ne part pas avant ce choix.
-
-Un skill part si la tâche correspond à sa description.
-
-L'instruction est payée en tokens sur cette édition.
-
-Le skill est payé seulement s'il est chargé.
+- Un agent configuré part au moment du choix.
+- Il porte le rôle et la liste des outils.
+- Il ne part pas avant ce choix.
+- Un skill part si la tâche correspond à sa description.
+- L'instruction est payée en tokens sur cette édition.
+- Le skill est payé seulement s'il est chargé.
 
 | Configuration | Fichier |
 | ------------- | ------- |

@@ -7,9 +7,7 @@ editor: markdown
 
 # Module 3 — Le framework
 
-Le code qui reste s'écrit avec trois gestes.
-
-Toujours dans cet ordre.
+Le code qui reste s'écrit avec trois gestes. Toujours dans cet ordre.
 
 ```mermaid
 flowchart TB
@@ -17,32 +15,23 @@ flowchart TB
   B --> C["3. Ctrl+I"]
 ```
 
-L'algorithme est en commentaires.
-
-Dans le fichier. Avant le code.
-
-La complétion implémente ce qui est écrit.
+- L'algorithme est en commentaires. Dans le fichier. Avant le code.
+- La complétion implémente ce qui est écrit.
 
 > [!note] Définition — Complétion
 > Proposition au curseur.
 > Elle lit le commentaire voisin.
 > Elle ne choisit pas la découpe.
 
-Chaque frappe est une requête neuve.
-
-Ctrl+I ajuste du code déjà écrit.
-
-Ctrl+I n'est pas le chat.
-
-Ce framework fait gagner du temps.
+- Chaque frappe est une requête neuve.
+- Ctrl+I ajuste du code déjà écrit. Ctrl+I n'est pas le chat.
+- Ce framework fait gagner du temps.
 
 ## La découpe
 
-Une fonction. Une responsabilité.
-
-Deux fonctions qui s'enchaînent ne font qu'appeler.
-
-Elles ne refont pas le travail.
+- Une fonction. Une responsabilité.
+- Deux fonctions qui s'enchaînent ne font qu'appeler.
+- Elles ne refont pas le travail.
 
 ```mermaid
 flowchart TB
@@ -50,6 +39,5 @@ flowchart TB
   A --> D["Décider"]
 ```
 
-La fonction qui appelle ne relit pas.
-
-Elle ne redécide pas.
+- La fonction qui appelle ne relit pas.
+- Elle ne redécide pas.

@@ -11,21 +11,13 @@ editor: markdown
 > L'agent qui écrit le code.
 > Ask et Ctrl+I ne s'appellent pas chat.
 
-Le code qui reste ne s'écrit pas dans le chat.
-
-La qualité et la stabilité comptent.
-
-Ce qui n'est pas écrit est tranché en silence.
-
-La connaissance de la codebase se perd.
-
-Le framework fait déjà gagner du temps.
-
-Commentaires. Puis complétion. Puis Ctrl+I.
-
-Un code de qualité est plus rapide ainsi.
-
-Il est aussi moins coûteux.
+- Le code qui reste ne s'écrit pas dans le chat.
+- La qualité et la stabilité comptent.
+- Ce qui n'est pas écrit est tranché en silence.
+- La connaissance de la codebase se perd.
+- Le framework fait déjà gagner du temps.
+- Commentaires. Puis complétion. Puis Ctrl+I.
+- Un code de qualité est plus rapide ainsi. Il est aussi moins coûteux.
 
 ```mermaid
 flowchart TB
@@ -34,11 +26,9 @@ flowchart TB
   P[POC] --> A
 ```
 
-L'agent écrit les tests unitaires.
-
-L'agent fait un POC.
-
-L'agent n'écrit pas le code qui reste.
+- L'agent écrit les tests unitaires.
+- L'agent fait un POC.
+- L'agent n'écrit pas le code qui reste.
 
 ## Mesures
 

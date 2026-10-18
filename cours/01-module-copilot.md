@@ -22,19 +22,12 @@ flowchart TB
   C --> D["4. Réponse dans l'éditeur"]
 ```
 
-L'éditeur donne le curseur et les fichiers ouverts.
-
-Le modèle répond à ce texte seul.
-
-Le modèle ne voit pas le projet.
-
-Le modèle ne voit pas les fichiers fermés.
-
-Le modèle peut changer.
-
-Cette couche reste.
-
-Un extrait copié entre dans la requête.
+- L'éditeur donne le curseur et les fichiers ouverts.
+- Le modèle répond à ce texte seul.
+- Le modèle ne voit pas le projet.
+- Le modèle ne voit pas les fichiers fermés.
+- Le modèle peut changer. Cette couche reste.
+- Un extrait copié entre dans la requête.
 
 ## Lexique
 
