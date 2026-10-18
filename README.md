@@ -1,46 +1,15 @@
-# GH Copilot — laboratoire Python
+# Développer avec GitHub Copilot — Python
 
-Formation GitHub Copilot adaptée au **Python** : cours (FR + EN), exercices guidés et TP mini push_swap.
+Support de la formation et laboratoire.
 
-## Contenu
+| Dossier | Rôle |
+| ------- | ---- |
+| `Developper-avec-GitHub-Copilot.pdf` | Support donné en salle |
+| `cours/` | Même contenu, en Markdown |
+| `lab/01-demo-framework/` | Squelettes de la démonstration |
+| `lab/02-exercice-framework/` | Exercice : journal de factures |
+| `lab/03-exercice-skill/` | Exercice : skill slides |
 
-| Dossier | Description |
-| ------- | ----------- |
-| `Cours.md` / `Cours.pdf` | Support FR (6 modules) |
-| `CoursENG.md` / `CoursENG.pdf` | Course material EN (6 modules) |
-| `exercices/fr/` | Énoncés FR + fichiers `.py` à compléter |
-| `exercices/en/` | Exercise sheets EN + same `.py` stubs |
-| `correction/fr/` | Corrections FR + code corrigé |
-| `correction/en/` | Solutions EN + corrected code |
-| `TP/fr/SUJET.md` | Énoncé TP push_swap (français) |
-| `TP/en/SUJET.md` | push_swap assignment (English) |
+L'énoncé de l'exercice framework est dans `lab/02-exercice-framework/ENONCE.md`.
 
-## Prérequis
-
-- Python 3.11+
-- VS Code + GitHub Copilot + extension Python (Pylance)
-- `make` (optionnel)
-
-## Exercices
-
-```bash
-make ex01    # tri à bulles (exercices/fr/)
-make ex02    # dataclass Employee + sérialisation
-make ex03    # parsing CSV
-
-make corr01  # correction
-```
-
-Énoncés anglais : `exercices/en/exercice-*.md`.
-
-## TP push_swap
-
-**Fourni :** `TP/fr/SUJET.md` ou `TP/en/SUJET.md`, `TP/checker.py`, `TP/scripts/`.
-
-```bash
-cd TP
-python3 src/push_swap.py 3 1 2 | python3 checker.py 3 1 2
-# attendu : OK (une fois push_swap implémenté)
-
-bash scripts/test_checker_50.sh 3
-```
+La prompt à coller est dans `lab/03-exercice-skill/PROMPT.md`.

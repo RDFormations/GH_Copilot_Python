@@ -1,7 +1,6 @@
-__pycache__/
-*.py[cod]
-.venv/
-venv/
-*.csv
 .DS_Store
-.pytest_cache/
+__pycache__/
+*.pyc
+node_modules/
+importer
+exercice
